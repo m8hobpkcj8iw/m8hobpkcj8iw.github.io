@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖心免费版-糖心免费版下载入口_糖心免费版功能与使用方式</title>
+<meta name="description" content="糖心免费版主题首页，集中说明糖心免费版的版本定位、主要功能分区、适合的使用场景与下载入口，帮助访问者快速了解糖心免费版并找到对应页面内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f25c7a'/%3E%3Cpath d='M32 46c-9-5.6-14-10.6-14-16.4C18 25 21.6 22 26 22c2.6 0 4.8 1.3 6 3.2C33.2 23.3 35.4 22 38 22c4.4 0 8 3 8 7.6C46 35.4 41 40.4 32 46z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#241a20;
+  --ink-soft:#5d4b53;
+  --paper:#fffaf9;
+  --paper-2:#fdeef1;
+  --rose:#e8476b;
+  --rose-deep:#b7294d;
+  --rose-soft:#ffd9e1;
+  --line:#f0d8dd;
+  --radius:18px;
+  --wrap:1120px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:16px;
+}
+img,svg{max-width:100%;display:block;}
+a{color:var(--rose-deep);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 20px;}
+.skip{position:absolute;left:-9999px;}
+.skip:focus{left:12px;top:12px;background:#fff;padding:8px 14px;border-radius:8px;z-index:99;}
+
+/* header */
+.site-head{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,250,249,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{display:flex;align-items:center;gap:18px;min-height:66px;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--ink);letter-spacing:.2px;}
+.brand:hover{text-decoration:none;}
+.brand-mark{width:34px;height:34px;flex:none;}
+.nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  font-size:14.5px;color:var(--ink-soft);padding:7px 12px;border-radius:999px;transition:background .2s,color .2s;
+}
+.nav a:hover{background:var(--paper-2);color:var(--rose-deep);text-decoration:none;}
+.nav a.active{background:var(--rose);color:#fff;}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#fff4f6 0%,#fde8ee 55%,#fbe0e8 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(232,71,107,.22),rgba(232,71,107,0) 70%);
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:64px 0 68px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
+  color:var(--rose-deep);background:#fff;border:1px solid var(--rose-soft);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--rose);display:block;}
+h1{
+  font-size:clamp(30px,4.6vw,46px);
+  line-height:1.2;margin:0 0 16px;letter-spacing:-.5px;font-weight:800;
+}
+h1 .accent{color:var(--rose-deep);}
+.hero-lead{font-size:16.5px;color:var(--ink-soft);margin:0 0 26px;max-width:34em;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:600;padding:12px 24px;border-radius:999px;
+  border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;
+}
+.btn-primary{background:var(--rose);color:#fff;box-shadow:0 8px 20px -8px rgba(232,71,107,.7);}
+.btn-primary:hover{background:var(--rose-deep);text-decoration:none;transform:translateY(-1px);}
+.btn-ghost{background:#fff;color:var(--rose-deep);border-color:var(--rose-soft);}
+.btn-ghost:hover{background:var(--paper-2);text-decoration:none;}
+.btn[aria-disabled="true"]{pointer-events:none;opacity:.95;}
+.hero-facts{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap;}
+.hero-facts div{font-size:13px;color:var(--ink-soft);}
+.hero-facts strong{display:block;font-size:20px;color:var(--ink);font-weight:800;line-height:1.3;}
+
+.hero-card{
+  background:#fff;border:1px solid var(--line);border-radius:24px;
+  padding:26px;box-shadow:0 24px 50px -30px rgba(183,41,77,.55);
+  position:relative;
+}
+.hero-card h2{font-size:16px;margin:0 0 4px;font-weight:700;}
+.hero-card p.sub{font-size:13px;color:var(--ink-soft);margin:0 0 18px;}
+.mini-list{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+.mini-list li{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--ink-soft);}
+.mini-list .dot{
+  flex:none;width:26px;height:26px;border-radius:9px;background:var(--paper-2);
+  display:grid;place-items:center;color:var(--rose-deep);
+}
+.mini-list svg{width:15px;height:15px;}
+.hero-card .dl{
+  margin-top:20px;display:flex;justify-content:center;width:100%;
+  background:var(--rose);color:#fff;padding:11px;border-radius:12px;font-weight:600;font-size:14.5px;
+}
+
+/* section basics */
+section{padding:64px 0;}
+.sec-head{max-width:640px;margin-bottom:34px;}
+.sec-tag{font-size:13px;font-weight:700;color:var(--rose);letter-spacing:1.5px;margin:0 0 8px;}
+h2.sec-title{font-size:clamp(22px,2.6vw,29px);margin:0 0 10px;font-weight:800;letter-spacing:-.3px;}
+.sec-desc{color:var(--ink-soft);font-size:15.5px;margin:0;}
+
+/* feature grid */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;transition:transform .18s,box-shadow .22s,border-color .2s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 34px -24px rgba(183,41,77,.55);border-color:var(--rose-soft);}
+.card .ico{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+  background:var(--paper-2);color:var(--rose-deep);margin-bottom:16px;
+}
+.card .ico svg{width:22px;height:22px;}
+.card h3{font-size:17px;margin:0 0 8px;font-weight:700;}
+.card p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+/* scenarios */
+.scene{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.scene-item{
+  background:#fff;border-radius:var(--radius);padding:24px;border:1px solid #f7e2e7;
+  display:flex;gap:16px;
+}
+.scene-item .num{
+  flex:none;font-size:22px;font-weight:800;color:var(--rose-soft);line-height:1;
+  font-family:Georgia,serif;
+}
+.scene-item h3{font-size:16px;margin:0 0 6px;font-weight:700;}
+.scene-item p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+/* article / long text */
+.split{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:start;}
+.prose h2{font-size:22px;margin:0 0 14px;font-weight:800;}
+.prose p{margin:0 0 16px;color:var(--ink-soft);font-size:15.5px;}
+.prose p strong{color:var(--ink);}
+.aside{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:sticky;top:88px;
+}
+.aside h3{font-size:15px;margin:0 0 14px;font-weight:700;}
+.aside ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
+.aside li{font-size:14px;color:var(--ink-soft);padding-left:18px;position:relative;}
+.aside li::before{
+  content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;
+  background:var(--rose-soft);border:2px solid var(--rose);
+}
+
+/* faq */
+.faq{background:#fff;border-top:1px solid var(--line);}
+.faq details{
+  border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:12px;background:var(--paper);
+}
+.faq details[open]{background:#fff;border-color:var(--rose-soft);}
+.faq summary{
+  cursor:pointer;font-weight:600;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:14px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--rose);font-size:19px;line-height:1;font-weight:400;}
+.faq details[open] summary::after{content:"–";}
+.faq p{margin:12px 0 0;font-size:14.5px;color:var(--ink-soft);}
+
+/* cta */
+.cta{
+  background:linear-gradient(135deg,#f24a6e,#c22a52);
+  color:#fff;border-radius:26px;padding:44px 40px;text-align:center;
+  box-shadow:0 30px 60px -40px rgba(183,41,77,.9);
+}
+.cta h2{font-size:clamp(21px,2.6vw,27px);margin:0 0 10px;font-weight:800;}
+.cta p{margin:0 auto 24px;max-width:36em;font-size:15px;color:#ffe3ea;}
+.cta .btn-primary{background:#fff;color:var(--rose-deep);box-shadow:none;}
+.cta .btn-primary:hover{background:#fff2f5;}
+
+/* footer */
+.site-foot{background:#2a1c22;color:#cbb6bd;padding:44px 0 30px;margin-top:64px;font-size:14px;}
+.foot-top{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start;padding-bottom:26px;border-bottom:1px solid #3d2b33;}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;font-size:16.5px;}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 22px;}
+.foot-links a{color:#cbb6bd;font-size:14px;}
+.foot-links a:hover{color:#fff;}
+.foot-note{padding-top:22px;font-size:13px;color:#9d8790;line-height:1.8;}
+
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:34px;padding:44px 0 50px;}
+  .grid-3{grid-template-columns:1fr 1fr;}
+  .split{grid-template-columns:1fr;gap:28px;}
+  .aside{position:static;}
+}
+@media (max-width:680px){
+  body{font-size:15.5px;}
+  .head-inner{flex-wrap:wrap;padding:10px 0;gap:8px;}
+  .nav{margin-left:0;width:100%;justify-content:flex-start;gap:2px;}
+  .nav a{padding:6px 10px;font-size:13.5px;}
+  .grid-3{grid-template-columns:1fr;}
+  .scene-grid{grid-template-columns:1fr;}
+  .hero-facts{gap:18px;}
+  section{padding:46px 0;}
+  .cta{padding:32px 22px;border-radius:20px;}
+  .card{padding:22px 20px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="16" fill="#e8476b"/>
+        <path d="M32 46c-9-5.6-14-10.6-14-16.4C18 25 21.6 22 26 22c2.6 0 4.8 1.3 6 3.2C33.2 23.3 35.4 22 38 22c4.4 0 8 3 8 7.6C46 35.4 41 40.4 32 46z" fill="#fff"/>
+      </svg>
+      <span>糖心免费版</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#features" class="active">功能分区</a>
+      <a href="#scenes">使用场景</a>
+      <a href="#about">版本说明</a>
+      <a href="#faq">常见疑问</a>
+      <a href="#download">获取入口</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow"><i></i>主题首页 · 版本与入口集中说明</span>
+        <h1 id="hero-title">糖心免费版</h1>
+        <p class="hero-lead">这里围绕糖心免费版做集中说明：它包含哪些功能分区、适合在什么场景下使用、下载入口如何找到，以及使用前需要了解的基本边界。内容按访问顺序组织，先看整体，再进入具体栏目。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#download">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg>
+            前往下载入口
+          </a>
+          <a class="btn btn-ghost" href="#features">了解功能分区</a>
+        </div>
+        <div class="hero-facts">
+          <div><strong>4</strong>功能分区</div>
+          <div><strong>3</strong>常见使用场景</div>
+          <div><strong>1</strong>统一获取入口</div>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="页面要点速览">
+        <h2>先看这四点</h2>
+        <p class="sub">把最常被问到的问题放在前面</p>
+        <ul class="mini-list">
+          <li>
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span>糖心免费版是免费提供的版本，页面说明以版本自身定位为准。</span>
+          </li>
+          <li>
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span>功能分区、场景与下载入口在同一页内可以依次找到。</span>
+          </li>
+          <li>
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span>下载按钮按规范保留为占位状态，替换真实地址后即可使用。</span>
+          </li>
+          <li>
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span>页面不收录账号、付费与具体版本号等未提供的信息。</span>
+          </li>
+        </ul>
+        <a class="dl" href="#download">查看下载说明</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-tag">功能分区</p>
+        <h2 class="sec-title" id="features-title">糖心免费版的四个基本分区</h2>
+        <p class="sec-desc">访问者通常在下载前想先知道“里面有什么”。下面按内容浏览、分类查找、个人设置与版本更新四个方向拆分，便于对照自己的需求。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/></svg></div>
+          <h3>内容浏览区</h3>
+          <p>糖心免费版的主浏览区域，用于按时间或推荐顺序查看内容条目。列表与详情之间来回切换，是多数人打开后停留最久的位置。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h10"/></svg></div>
+          <h3>分类与查找</h3>
+          <p>把内容按类别归拢，配合关键词查找，减少逐条翻阅的时间。适合已经明确想看某一类内容、不想从头浏览的访问者。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <h3>个人设置</h3>
+          <p>集中放置与个人偏好相关的选项，例如显示方式与使用记录的查看。设置项以版本内实际提供为准，页面不作额外承诺。</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></div>
+          <h3>版本与更新</h3>
+          <p>糖心免费版在更新时会给出说明，用户可据此判断是否需要重新获取。更新节奏与具体条目取决于版本发布情况，本页不预设日期。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scenes" aria-labelledby="scenes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-tag">使用场景</p>
+        <h2 class="sec-title" id="scenes-title">三种典型情形，决定你怎么用</h2>
+        <p class="sec-desc">同一个版本，不同访问者的打开方式并不一样。把场景说清楚，比罗列功能更容易判断是否适合自己。</p>
+      </div>
+      <div class="scene-grid">
+        <div class="scene-item">
+          <span class="num">01</span>
+          <div>
+            <h3>第一次接触，先看再决定</h3>
+            <p>对糖心免费版还不熟悉的人，通常先浏览功能分区与常见疑问，确认界面和内容方向符合预期，再前往下载入口。这条路径最省时间。</p>
+          </div>
+        </div>
+        <div class="scene-item">
+          <span class="num">02</span>
+          <div>
+            <h3>明确目标，直接找入口</h3>
+            <p>已经决定使用的访问者，可直接跳到下载区域，跳过介绍性段落。页面在首屏和末段都放置了入口，避免反复回滚查找。</p>
+          </div>
+        </div>
+        <div class="scene-item">
+          <span class="num">03</span>
+          <div>
+            <h3>已在使用，核对版本</h3>
+            <p>正在使用的人更多关心更新说明与设置项位置。对照版本说明，可以判断当前版本是否与页面描述一致，再决定是否重新获取。</p>
+          </div>
+        </div>
+        <div class="scene-item">
+          <span class="num">04</span>
+          <div>
+            <h3>替他人了解，需要结论</h3>
+            <p>帮别人先了解的情况，往往需要一个简短结论：糖心免费版是免费版本，功能围绕浏览、查找与设置展开，具体以实际版本为准。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-title">
+    <div class="wrap split">
+      <div class="prose">
+        <p class="sec-tag">版本说明</p>
+        <h2 id="about-title">关于糖心免费版，需要说清楚的部分</h2>
+        <p><strong>糖心免费版是免费提供的版本</strong>，页面围绕这一前提组织内容，不涉及付费方案、会员等级或价格对比。凡本页未明确写出的内容，均不视为该版本的既有能力。</p>
+        <p>在功能层面，糖心免费版以内容浏览为主线，分类查找与个人设置为辅助，版本更新说明用于提示变化。四者共同构成一个完整的日常使用闭环：先看到内容，再缩小范围，最后按自己的偏好固定下来。</p>
+        <p>在使用条件上，具体可用的功能、界面样式与更新频率由版本自身决定，本页只描述方向，不给出未经验证的细节。若页面描述与实际版本存在差异，应以实际版本为准。</p>
+        <p>在获取方式上，糖心免费版的下载入口统一放在本页下载区域，按钮当前为占位状态，待真实地址替换后即可正常跳转。在此之前，按钮不响应点击，避免产生无效操作。</p>
+        <p>需要提醒的是，本页不收集账号信息，也不引导填写任何个人资料。遇到要求额外提供敏感信息的页面，建议先核实来源，再决定是否继续。这一条对糖心免费版同样适用。</p>
+      </div>
+      <aside class="aside" aria-label="版本要点">
+        <h3>版本要点</h3>
+        <ul>
+          <li>免费提供，页面不涉及付费说明</li>
+          <li>功能围绕浏览、查找与设置展开</li>
+          <li>更新节奏以版本发布为准</li>
+          <li>下载入口为占位状态，待替换</li>
+          <li>页面不索取账号与个人资料</li>
+          <li>描述与实际版本冲突时以实际为准</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-tag">常见疑问</p>
+        <h2 class="sec-title" id="faq-title">下载前常被问到的几个问题</h2>
+        <p class="sec-desc">以下回答只覆盖本页能够确认的范围，未提供的信息不作推测。</p>
+      </div>
+      <details open>
+        <summary>糖心免费版是否收费？</summary>
+        <p>糖心免费版以免费提供为定位，本页不包含付费方案、订阅价格或会员等级的内容。若后续出现与“免费”定位不一致的情况，以实际版本说明为准。</p>
+      </details>
+      <details>
+        <summary>下载按钮为什么点击没有反应？</summary>
+        <p>当前下载按钮为占位状态，用于后续替换真实地址，因此在替换完成前不响应点击。这是页面设计上的安排，不是加载失败。</p>
+      </details>
+      <details>
+        <summary>页面会记录我的个人信息吗？</summary>
+        <p>本页为静态主题首页，不设置账号入口，也不引导填写个人资料。页面上没有收集信息的表单控件，浏览过程仅涉及页面本身。</p>
+      </details>
+      <details>
+        <summary>功能分区写的内容，和实际版本一定一致吗？</summary>
+        <p>分区描述的是功能方向，具体界面与可用项由版本决定。两者出现差异时，应以你实际使用的版本为准，本页描述不作为功能承诺。</p>
+      </details>
+      <details>
+        <summary>如何判断是否需要更新？</summary>
+        <p>可先对照版本说明中提到的更新方向，再看当前使用版本是否已包含对应变化。页面不提供版本号与发布日期，避免给出未经确认的数字。</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="download" aria-labelledby="download-title">
+    <div class="wrap">
+      <div class="cta">
+        <h2 id="download-title">获取糖心免费版</h2>
+        <p>下载入口集中在此处。按钮当前为占位状态，真实地址替换后即可直接使用；在此之前，可先通过上方栏目了解功能与使用场景。</p>
+        <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="16" fill="#e8476b"/>
+          <path d="M32 46c-9-5.6-14-10.6-14-16.4C18 25 21.6 22 26 22c2.6 0 4.8 1.3 6 3.2C33.2 23.3 35.4 22 38 22c4.4 0 8 3 8 7.6C46 35.4 41 40.4 32 46z" fill="#fff"/>
+        </svg>
+        <span>糖心免费版</span>
+      </div>
+      <nav class="foot-links" aria-label="页尾导航">
+        <a href="#features">功能分区</a>
+        <a href="#scenes">使用场景</a>
+        <a href="#about">版本说明</a>
+        <a href="#faq">常见疑问</a>
+        <a href="#download">获取入口</a>
+      </nav>
+    </div>
+    <p class="foot-note">本页为糖心免费版主题首页，内容围绕版本定位、功能分区、使用场景与获取入口展开。页面所述方向以实际版本为准，下载入口为占位状态，待真实地址替换后生效。页面不收集账号与个人资料。</p>
+  </div>
+</footer>
+</body>
+</html>
